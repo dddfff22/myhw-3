@@ -17,7 +17,7 @@ struct metadata
   int free;
 
   // A pointer tto the data section
-  char data[1];
+  char data[0];
 };
 
 extern void *base;

@@ -54,7 +54,6 @@ int main(int argc, char *argv[]) {
   int cnt = 0;
   int target = 0, rsize = 0;
   int tsize = 0;
-
   /* Error Checking */
   if (argc < 2) {
     printf("Usage: %s [-b or -w] input_file\n", argv[0]);
@@ -62,7 +61,7 @@ int main(int argc, char *argv[]) {
   }
 
   load(argv[argc-1]);
-
+	
 
   while(cnt != argc-1){
     if(strcmp(argv[cnt], "-b") == 0){
@@ -78,11 +77,14 @@ int main(int argc, char *argv[]) {
   }
 
   for(i = 0 ; i < query_cnt ; i++) {
-
+	
     switch(query_list[i].type) {
       case 'm':
+	
       alloc_list[j] = m_malloc(strlen(query_list[i].val) + 1);
+	
       strcpy(alloc_list[j], query_list[i].val);
+	
       j++;
       break;
       case 'f':
